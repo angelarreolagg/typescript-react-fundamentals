@@ -1,16 +1,22 @@
 import { useState } from "react";
 
+// Interface defines the exact shape of props - TypeScript will error if wrong types are passed
 interface PersonProps {
   name: string;
   age: number;
   isMarried: boolean;
 }
 
+// Typing props ensures the component receives exactly what it expects
 export const Person = (props: PersonProps) => {
-  const [isShowInfo, setIsShowInfo] = useState<boolean>(true); // Optional but is good practice to make clear the type of your states
+  // Explicit generic <boolean> makes the state type clear, even though TS could infer it
+  const [isShowInfo, setIsShowInfo] = useState<boolean>(true);
   const toggleInfo = () => setIsShowInfo((prev) => !prev);
 
+  // Union type (string | null) - handles cases where data might not exist yet
   const [biography, setBiography] = useState<string | null>(null);
+
+  // React.ChangeEvent<HTMLInputElement> gives type-safe access to e.target.value
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBiography(e.target.value);
   };
