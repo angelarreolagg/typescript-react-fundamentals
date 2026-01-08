@@ -1,5 +1,6 @@
 import "./App.css";
-import { Person } from "./Person";
+import { User } from "./User";
+import { UserProvider } from "./UserContextProvider";
 
 // Basic type examples - TypeScript ensures variables hold the correct type
 // let name: string = "Angel";
@@ -11,11 +12,11 @@ import { Person } from "./Person";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       {/* TypeScript validates props at compile time - wrong types = instant error */}
-      <Person name="Angel" age={23} isMarried={false} />
-      <Person name="Pedro" age={28} isMarried={true} />
-    </>
+      <User name="Angel" age={23} isMarried={false} />
+      <User name="Pedro" age={28} isMarried={true} />
+    </UserProvider>
   );
 }
 

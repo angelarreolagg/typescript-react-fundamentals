@@ -21,6 +21,11 @@ export const Person = (props: PersonProps) => {
     setBiography(e.target.value);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Make something with the event of the form.
+    event.preventDefault();
+  };
+
   return (
     <div>
       <button onClick={toggleInfo}>Toggle Info</button>
