@@ -39,13 +39,13 @@ export const UserProvider = (props: Props) => {
     setUsers([{ name: "Pedro", age: 22, isMarried: false }]);
   }, []);
 
-  const addUser = (user: User) => {
+  const addUser = (_user: User) => {
     return null;
   };
-  const updateUser = (id: string) => {
+  const updateUser = (_id: string) => {
     return null;
   };
-  const deleteUser = (id: string) => {
+  const deleteUser = (_id: string) => {
     return null;
   };
 
